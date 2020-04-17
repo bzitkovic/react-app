@@ -10,8 +10,8 @@ const links = {
 
 const Header = () => {  
     return (
-        <header className="header-main">
-            <div className="header-main__inner">
+        <header className="HeaderMain">
+            <div className="HeaderMain-Inner">
                 <Link to="/"> <img src={Logo} alt="foi-logo"/> </Link>
                 <nav>
                     <ul>

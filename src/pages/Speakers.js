@@ -1,19 +1,21 @@
 import React from 'react';
+import SpeakerSection from '../components/SpeakerSection/SpeakerSection';
+import SpeakersTitle from '../components/SpeakersTitle/SpeakersTitle';
 import SpeakersCards from '../components/Speakers/SpeakersCard';
 
 
 const Speakers = () => {  
     return (
         <>
-        <h1 className="PageTitle">Sudionici</h1>
-        <section className="SectionEvents">
+       <SpeakersTitle> Sudionici </SpeakersTitle>
+        <SpeakerSection>
             <SpeakersCards></SpeakersCards>   
             <SpeakersCards></SpeakersCards>   
             <SpeakersCards></SpeakersCards>   
             <SpeakersCards></SpeakersCards>   
             <SpeakersCards></SpeakersCards>   
             <SpeakersCards></SpeakersCards>               
-        </section>
+        </SpeakerSection>
         </>
 
     );
