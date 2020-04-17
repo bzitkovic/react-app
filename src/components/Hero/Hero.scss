@@ -1,0 +1,63 @@
+/* HERO Section */
+
+.HeroSection {
+    position: relative;
+    height: 500px;
+    background: url('../../assets/images/event.jpg') rgba(0, 0, 0, 0.69);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+  }
+  
+  .HeroSection-Div {
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    left: calc((100% - 400px) / 2);
+    top: calc((100% - 250px) / 2);
+    width: 400px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .HeroSection-Div p {
+    margin-top: 15px;
+    color: white;
+    font-size: xx-large;
+  }
+
+  .HeroSection-Div h2{
+    margin-top: 25px;
+    font-size: 35px;
+    color: orange;
+  }
+  
+  .HeroSection-Button {
+    background-color: #c59613;
+    width: 160px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .SectionMore {
+    width: 1280px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  
+
+  
+
+  
