@@ -1,22 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
 import './Header.scss';
 
 const links = {
     speakers: 'Speaker',
-    events: 'Events'
+    events: 'Events',
+    toDo: 'ToDo'
 }
 
 const Header = () => {  
     return (
         <header className="HeaderMain">
             <div className="HeaderMain-Inner">
-                <Link to="/"> <img src={Logo} alt="foi-logo"/> </Link>
+                <NavLink to="/"> <img src={Logo} alt="foi-logo"/> </NavLink>
                 <nav>
                     <ul>
-                        <li><Link to="/speakers"> {links.speakers} </Link></li>
-                        <li><Link to="/events"> {links.events} </Link></li>
+                        <li><NavLink to="/speakers" activeStyle={{ fontWeight: "bold", color: "red"}} > {links.speakers} </NavLink></li>
+                        <li><NavLink to="/events" activeStyle={{fontWeight: "bold",color: "red"}} > {links.events} </NavLink></li>
+                        <li><NavLink to="/toDo" activeStyle={{fontWeight: "bold",color: "red"}}> {links.toDo} </NavLink></li>
                     </ul>
                 </nav>
             </div>

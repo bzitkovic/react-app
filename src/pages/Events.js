@@ -1,25 +1,62 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import TimeIcon from '../assets/images/time-icon.png'
 import LocationIcon from '../assets/images/location-icon.png';
 import EventsSection from '../components/EventsSection/EventsSection';
 import EventsTitle from '../components/EventsTitle/EventsTitle';
 import EventsCard from '../components/Events/EventsCard';
+import eventsMockData from '../lib/events';
+import LoaderCompo from '../components/Loader/Loader';
+import SearchBar from '../components/SearchBar/SearchBar';
+
 
 const Events = () => {
+    const [events, setEvents] = useState([]);
+    const [eventsCopy, setEventsCopy] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const handleChange = e => {
+        setSearchTerm(e.target.value);
+    };
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setEvents(eventsMockData);
+        }, 1000);
+
+        const results = events.filter(person => person.title.toLowerCase().includes(searchTerm));
+        if(results.length > 0){
+            setEventsCopy(results);
+        } else{
+            setEventsCopy(eventsMockData);
+        }
+
+        return () => clearTimeout(timer);
+    }, [searchTerm]);
+
+    const ShowEvents = () => {
+        return eventsCopy.map((event, index) => (
+            <EventsCard
+                key = {index}
+                type = "events"
+                imageLocation = {LocationIcon}
+                altLocation = "location-image"
+                imageTime = {TimeIcon}
+                altTime = "time-image"
+                title = {event.title}
+                location = {event.location}
+                dateTime = {event.dateTime}
+                about = {event.about}
+            />
+        ))
+    }
     return (
         <>
         <EventsTitle> Događanja </EventsTitle>
+        <SearchBar placeholder={"Search events . . ."} value={searchTerm} change={handleChange} /> 
         <EventsSection>
-            <EventsCard imageLocation = {LocationIcon} altLocation = "location-image" imageTime = {TimeIcon} altTime = "time-iamge" ></EventsCard>  
-            <EventsCard imageLocation = {LocationIcon} altLocation = "location-image" imageTime = {TimeIcon} altTime = "time-iamge" ></EventsCard>  
-            <EventsCard imageLocation = {LocationIcon} altLocation = "location-image" imageTime = {TimeIcon} altTime = "time-iamge" ></EventsCard>  
-            <EventsCard imageLocation = {LocationIcon} altLocation = "location-image" imageTime = {TimeIcon} altTime = "time-iamge" ></EventsCard>  
-            <EventsCard imageLocation = {LocationIcon} altLocation = "location-image" imageTime = {TimeIcon} altTime = "time-iamge" ></EventsCard>  
-            <EventsCard imageLocation = {LocationIcon} altLocation = "location-image" imageTime = {TimeIcon} altTime = "time-iamge" ></EventsCard>  
+            {events == "" ? <LoaderCompo/> : ShowEvents()}   
         </EventsSection>
-
         </>
-
     );
 }
 

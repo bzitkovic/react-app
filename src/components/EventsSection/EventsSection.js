@@ -5,7 +5,7 @@ import './EventsSection.scss';
 const EventsSection = (props) => {  
     return (
         <section className="SectionEvents">
-            {props.children};
+            {props.children}
         </section>
     );
 }

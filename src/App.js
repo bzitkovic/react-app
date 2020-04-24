@@ -10,6 +10,7 @@ import Main  from  './components/Main/Main';
 import Home from './pages/Home';
 import Events from './pages/Events';
 import Speakers from './pages/Speakers';
+import ToDo from './pages/ToDo';
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/speakers' component={Speakers} />
         <Route path='/events' component={Events} /> 
+        <Route path='/toDo' component={ToDo} /> 
       </Main>
      </>   
     );

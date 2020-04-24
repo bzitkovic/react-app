@@ -5,7 +5,7 @@ import './SpeakerSection.scss';
 const SpeakerSection = (props) => {  
     return (
         <section className="SectionEvents">
-            {props.children};
+            {props.children}
         </section>
     );
 }
