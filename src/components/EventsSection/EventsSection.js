@@ -1,12 +1,12 @@
 import React from 'react';
-import './EventsSection.scss';
+import { SectionEvents } from './EventsSectionStyle.js';
 
 
 const EventsSection = (props) => {  
     return (
-        <section className="SectionEvents">
+        <SectionEvents>
             {props.children}
-        </section>
+        </SectionEvents>
     );
 }
 

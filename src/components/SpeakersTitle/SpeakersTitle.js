@@ -1,10 +1,10 @@
 import React from 'react';
-import './SpeakersTitle.scss';
+import  { Title } from './SpeakersTitleStyle.js';
 
 
 const SpeakerTitle = (props) => {  
     return (
-        <h1 className="PageTitle"> {props.children} </h1>
+        <Title> {props.children} </Title>
     );
 }
 

@@ -1,21 +1,22 @@
 import React from 'react';
-import './SpeakersCard.scss';
+import { InfoBox, Header, BtnJoin, Title, TypeEvent, About ,Footer } from './SpeakersCardStyle.js';
+
 
 
 const SpeakersCard = (props) => {
     return (
-        <div className="InfoBox">
-            <div className="InfoBox-Header">
-                <div className="InfoBox-Icon InfoBox-Icon_TypeSpeaker"></div>
-                <h2 className="InfoBox-Title">{props.title}</h2>
-            </div>
-            <p className="InfoBox-About">
+        <InfoBox>
+            <Header>
+                <TypeEvent></TypeEvent>
+                <Title>{props.title}</Title>
+            </Header>
+            <About>
                {props.about}
-            </p>
-            <div className="InfoBox-Footer">
-                <a href="#" className="InfoBox-BtnJoin">Prijavi se na predavanje</a>
-            </div>
-        </div>
+            </About>
+            <Footer>
+                <BtnJoin href="#">Prijavi se na predavanje</BtnJoin>
+            </Footer>
+        </InfoBox>
     )
 }
 

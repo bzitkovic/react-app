@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Logo from '../../assets/images/logo.png';
-import './Header.scss';
+import { HeaderMain, Inner } from './HeaderStyle.js';
 
 const links = {
     speakers: 'Speaker',
@@ -11,8 +11,8 @@ const links = {
 
 const Header = () => {  
     return (
-        <header className="HeaderMain">
-            <div className="HeaderMain-Inner">
+        <HeaderMain>
+            <Inner>
                 <NavLink to="/"> <img src={Logo} alt="foi-logo"/> </NavLink>
                 <nav>
                     <ul>
@@ -21,8 +21,8 @@ const Header = () => {
                         <li><NavLink to="/toDo" activeStyle={{fontWeight: "bold",color: "red"}}> {links.toDo} </NavLink></li>
                     </ul>
                 </nav>
-            </div>
-        </header>
+            </Inner>
+        </HeaderMain>
     );
 }
 

@@ -1,9 +1,14 @@
-.HeaderMain {
+import styled from 'styled-components';
+
+
+export const HeaderMain = styled.header `
     background-color: white;
     width: 100%;
     height: 80px;
-    &-Inner{
-        display: flex;
+`;
+
+export const Inner = styled.div `
+    display: flex;
         justify-content: space-around;
         max-width: 1280px;
         margin: auto;
@@ -26,6 +31,5 @@
             padding-right: 10px;
             display: inline-block
         }
-    }
-}
-
+`;
+   

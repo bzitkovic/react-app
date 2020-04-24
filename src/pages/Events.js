@@ -52,7 +52,7 @@ const Events = () => {
     return (
         <>
         <EventsTitle> Događanja </EventsTitle>
-        <SearchBar placeholder={"Search events . . ."} value={searchTerm} change={handleChange} /> 
+        {events == "" ? <SearchBar active={true} placeholder={"Search events . . ."} value={searchTerm} change={handleChange} /> : <SearchBar active={false} placeholder={"Search events . . ."} value={searchTerm} change={handleChange} /> }
         <EventsSection>
             {events == "" ? <LoaderCompo/> : ShowEvents()}   
         </EventsSection>

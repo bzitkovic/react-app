@@ -1,10 +1,10 @@
 import React from 'react';
-import './EventsTitle.scss';
+import { PageTitle } from './EventsTitleStyle.js';
 
 
 const EventsTitle = (props) => {  
     return (
-        <h1 className="PageTitle"> {props.children} </h1>
+        <PageTitle> {props.children} </PageTitle>
     );
 }
 

@@ -1,36 +1,36 @@
 import React from 'react';
-import './EventsCard.scss';
+import { InfoBox, Header, BtnJoin, Title, TypeEvent, SubHeader, SubheaderBox, SubheaderFigure, SubheaderImg, About ,Footer } from './EventsCardStyle.js';
 
 
 const EventsCard = (props) => {
     return (
-        <div className="InfoBox">
-            <div className="InfoBox-Header">
-                <div className="InfoBox-Icon InfoBox-Icon_TypeEvent"></div>
-                <h2 className="InfoBox-Title">{props.title}</h2>
-            </div>
-            <div className="InfoBox-Subheader">
-                <div className="InfoBox-SubheaderBox">
-                    <figure className="InfoBox-SubheaderFigure">
-                        <img className="InfoBox-SubheaderImg" src={props.imageLocation} alt={props.altLocation} />
-                    </figure>
-                    <span className="InfoBox-SubheaderBoxText">{props.location}</span>
-                </div>
+        <InfoBox>
+            <Header>
+                <TypeEvent></TypeEvent>
+                <Title>{props.title}</Title>
+            </Header>
+            <SubHeader>
+                <SubheaderBox>
+                    <SubheaderFigure>
+                        <SubheaderImg src={props.imageLocation} alt={props.altLocation} />
+                    </SubheaderFigure>
+                    <span>{props.location}</span>
+                </SubheaderBox>
 
-                <div className="InfoBox-SubheaderBox">
-                    <figure className="InfoBox-SubheaderFigure">
-                        <img src={props.imageTime} alt={props.altTime} className="InfoBox-SubheaderImg" />
-                    </figure>
-                    <span className="InfoBox-SubheaderBoxText">{props.dateTime}</span>
-                </div>
-            </div>
-            <p className="InfoBox-About">
+                <SubheaderBox>
+                    <SubheaderFigure>
+                        <SubheaderImg src={props.imageTime} alt={props.altTime} />
+                    </SubheaderFigure>
+                    <span>{props.dateTime}</span>
+                </SubheaderBox>
+            </SubHeader>
+            <About>
                 {props.about}
-            </p>
-            <div className="InfoBox-Footer">
-                <a className="#" className="InfoBox-BtnJoin">Prijavi se na predavanje</a>
-            </div>
-        </div>
+            </About>
+            <Footer>
+                <BtnJoin>Prijavi se na predavanje</BtnJoin>
+            </Footer>
+        </InfoBox>
     )
 }
 

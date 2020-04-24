@@ -46,8 +46,7 @@ const Speakers = () => {
     return (
     <>
         <SpeakersTitle> Sudionici </SpeakersTitle>
-        <SearchBar placeholder={"Search speakers . . ."} value={searchTerm} change={handleChange} /> {/* <-- OVO NE RADI */} 
-        
+        {speakers == "" ? <SearchBar active={true} placeholder={"Search speakers . . ."} value={searchTerm} change={handleChange} /> : <SearchBar active={false} placeholder={"Search speakers . . ."} value={searchTerm} change={handleChange} /> }
         <SpeakerSection>
         {speakers == "" ? <Loader/> : ShowSpeakers()}   
         </SpeakerSection>

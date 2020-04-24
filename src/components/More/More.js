@@ -1,14 +1,14 @@
 import React from 'react';
-import './More.scss';
+import { SectionMoreDescription, SectionMoreBottom } from './MoreStyle.js';
 
 const More = (props) => {
     return (
-        <div className="SectionMore-Description">
+        <SectionMoreDescription>
             <p>
                 {props.children}
             </p>
-            <button type="button" className="SectionMore-Button">SAZNAJ VIŠE</button>
-        </div>
+            <SectionMoreBottom type="button" >SAZNAJ VIŠE</SectionMoreBottom>
+        </SectionMoreDescription>
     )
 }
 

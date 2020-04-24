@@ -1,13 +1,14 @@
 /* Section MORE*/
+import styled from 'styled-components';
 
-.SectionMore-Cards {
+export const SectionMoreCards = styled.div `
   width: 1280px;
   display: flex;
   margin-right: auto;
   margin-left: auto;
-}
+`;
 
-.SectionMore-Card {
+export const SectionMoreCard = styled.div `
   padding: 0;
   width: 300px;
   height: 320px;
@@ -28,4 +29,5 @@
     max-width: 240px;
     max-height: 280px;
   }
-}
+`;
+  

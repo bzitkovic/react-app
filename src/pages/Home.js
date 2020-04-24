@@ -9,6 +9,10 @@ import SpeakersImage from '../assets/images/speakers.jpg';
 import CalendarImage from '../assets/images/calendar.jpg';
 import PartnerImage from '../assets/images/partner.jpg';
 import FOILastYear from '../assets/images/last-year.jpg';
+import {SectionMoreCards } from '../components/Card/CardStyle';
+import { HeroSection } from '../components//Hero/HeroStyle.js';
+import { SectionLastYear } from '../components/LastYear/LastYearStyle';
+import { SectionMore } from '../components/More/MoreStyle';
 
 
 const Home = () => {  
@@ -28,11 +32,11 @@ const Home = () => {
     const ShowData = () => {
         return  (
             <>
-            <section className="HeroSection">
+            <HeroSection>
                 <Hero />
-            </section>
+            </HeroSection>
 
-            <section className="SectionMore">
+            <SectionMore>
                 <More>
                     Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up
                     one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
@@ -40,17 +44,17 @@ const Home = () => {
                     amet..", comes from a line in section 1.10.32.
                 </More>
 
-                <div className="SectionMore-Cards">
+                <SectionMoreCards>
                     <Card image = {MettingImage} alt = "meeting-image"> O tjednu karijera </Card>
                     <Card image = {SpeakersImage} alt = "speakers-image" children = "Speakers"> Predavači </Card>
                     <Card image = {CalendarImage} alt = "calendar-image" children = "Calendar"> Raspored </Card>
                     <Card image = {PartnerImage} alt = "partner-image" children = "Partners"> Partneri </Card>
-                </div>
-            </section>
+                </SectionMoreCards>
+            </SectionMore>
 
-            <section className="SectionLastYear">
+            <SectionLastYear>
                 <LastYear image={FOILastYear} alt="last-year"> FOI tjedan karijera 2019 </LastYear>
-            </section>
+            </SectionLastYear>
         </>
         )
     }

@@ -1,12 +1,13 @@
 import React from 'react';
-import './SpeakerSection.scss';
+import { SectionEvents } from '../EventsSection/EventsSectionStyle';
+
 
 
 const SpeakerSection = (props) => {  
     return (
-        <section className="SectionEvents">
+        <SectionEvents>
             {props.children}
-        </section>
+        </SectionEvents>
     );
 }
 
