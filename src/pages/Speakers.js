@@ -6,30 +6,37 @@ import SpeakersCards from '../components/Speakers/SpeakersCard';
 import speakersMockData from '../lib/speakers';
 import SearchBar from '../components/SearchBar/SearchBar';
 
+import { getSpeakers } from '../../../reactApp/src/components/api/speakers';
+
 
 const Speakers = () => {  
+    const authToken = localStorage.getItem('token');
     const [speakers, setSpeakers] = useState([]);
     const [speakersCopy, setSpeakersCopy] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    
+     
     const handleChange = e => {
         setSearchTerm(e.target.value);
     };
     
     
-  useEffect(() => {
-    const timer = setTimeout(() => {
-        setSpeakers(speakersMockData);
-    }, 1000);
-    
-    const results = speakers.filter(person => person.title.toLowerCase().includes(searchTerm));
-    if(results.length > 0){
-        setSpeakersCopy(results);
-    } else{
-        setSpeakersCopy(speakersMockData);
-    }
-    
-    return () => clearTimeout(timer);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            getSpeakers(authToken).then(res => {
+                setSpeakers(res.speakers);
+            })
+        }, 1000);
+        
+        const results = speakers.filter(person => person.title.toLowerCase().includes(searchTerm));
+        if(results.length > 0){
+            setSpeakersCopy(results);
+        } else{
+            getSpeakers(authToken).then(res => {
+                setSpeakersCopy(res.speakers);
+            })
+        }
+        
+        return () => clearTimeout(timer);
     }, [searchTerm]);
 
     const ShowSpeakers = () => {

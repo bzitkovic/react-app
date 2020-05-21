@@ -25,11 +25,22 @@ export const Inner = styled.div `
             }
         }
         & li{
-            list-style-type: none;
-            margin: 0;
-            padding-left: 10px;
-            padding-right: 10px;
-            display: inline-block
+           
         }
 `;
-   
+
+export const Navigation = styled.nav `
+
+`
+
+export const Ul = styled.ul `
+
+`;
+
+export const Li = styled.li `
+    list-style-type: none;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block
+`;

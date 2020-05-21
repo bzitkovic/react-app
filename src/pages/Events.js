@@ -8,8 +8,11 @@ import eventsMockData from '../lib/events';
 import LoaderCompo from '../components/Loader/Loader';
 import SearchBar from '../components/SearchBar/SearchBar';
 
+import { getEvents } from '../../../reactApp/src/components/api/events';
+
 
 const Events = () => {
+    const authToken = localStorage.getItem('token');
     const [events, setEvents] = useState([]);
     const [eventsCopy, setEventsCopy] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
@@ -20,14 +23,19 @@ const Events = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setEvents(eventsMockData);
+            getEvents(authToken).then(res => {
+                setEvents(res.events);
+            })
         }, 1000);
+        
 
         const results = events.filter(person => person.title.toLowerCase().includes(searchTerm));
         if(results.length > 0){
             setEventsCopy(results);
         } else{
-            setEventsCopy(eventsMockData);
+            getEvents(authToken).then(res => {
+                setEventsCopy(res.events);
+            })
         }
 
         return () => clearTimeout(timer);
