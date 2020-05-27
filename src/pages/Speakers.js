@@ -6,7 +6,7 @@ import SpeakersCards from '../components/Speakers/SpeakersCard';
 import speakersMockData from '../lib/speakers';
 import SearchBar from '../components/SearchBar/SearchBar';
 
-import { getSpeakers } from '../../../reactApp/src/components/api/speakers';
+import { getSpeakers } from '../components/api/speakers';
 
 
 const Speakers = () => {  
