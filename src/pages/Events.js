@@ -8,7 +8,7 @@ import eventsMockData from '../lib/events';
 import LoaderCompo from '../components/Loader/Loader';
 import SearchBar from '../components/SearchBar/SearchBar';
 
-import { getEvents } from '../../../reactApp/src/components/api/events';
+import { getEvents } from '../components/api/events';
 
 
 const Events = () => {
